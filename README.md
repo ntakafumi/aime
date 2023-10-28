@@ -27,10 +27,3 @@ journal={IEEE Access},
  doi={10.1109/ACCESS.2023.3314336}}
 ```
 `
-
-
-
-=======
-# aime
- AIME is proposed to address the challenges faced by existing methods in providing intuitive explanations for black-box models. 
->>>>>>> 90871e3cf86dac444d43f59307abe8381c7fa31f
