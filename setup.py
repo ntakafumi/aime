@@ -26,7 +26,8 @@ setup(
     long_description_content_type='text/markdown',
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: Apply the The 2-Clause BSD License only for academic or research purposes, and apply Commercial License for commercial and other purposes.",
+        "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
     ],
 )
+
