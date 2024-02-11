@@ -1,5 +1,5 @@
 # AIME:Approximate Inverse Model Explanations
-<img src="https://github.com/ntakafumi/aime/assets/147581981/a858e613-8c30-47dd-8e61-5bf6165c385c" width"30%">
+<img src="https://github.com/ntakafumi/aime/assets/147581981/a858e613-8c30-47dd-8e61-5bf6165c385c" width="30%">
 
 The AIME methodology is detailed in the paper available at The AIME methodology is detailed in the paper available at [https://ieeexplore.ieee.org/document/10247033](https://ieeexplore.ieee.org/document/10247033). AIME is proposed to address the challenges faced by existing methods in providing intuitive explanations for black-box models. AIME offers unified global and local feature importance by deriving approximate inverse operators for black-box models. It introduces a representative instance similarity distribution plot, aiding comprehension of the predictive behavior of the model and target dataset. This software only supports the global feature importance of AIME.
 ## Features
