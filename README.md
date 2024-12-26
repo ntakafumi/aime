@@ -6,6 +6,12 @@ The AIME methodology is detailed in the paper available at The AIME methodology 
 - **Unified Global and Local Feature Importance**: AIME derives approximate inverse operators for black-box models, offering insights into both global and local feature importance.
 * **Representative Instance Similarity Distribution Plot**: This feature aids in understanding the predictive behavior of the model and the target dataset, illustrating the relationship between different predictions.
 * **Effective Across Diverse Data Types**: AIME has been tested and proven effective across various data types, including tabular data, handwritten digit images, and text data.
+* **Data-Driven Model-agnostic feature importance extraction** :Feature importance can be derived in a model-independent, data-driven manner: Feature importance methods linked to machine learning, such as the XAI methods SHAP, Random Forest, and XGboost,
+$Explanation=SHAP(model, X), Explanation=Random_Forest(model, X), Explanation=XGboost(model, X),$
+the explanation is always affected by the bias of the black box model. In contrast, AIME is a
+$Explain= AIME(X,Y)$, AIME constructs explanations “using only the correspondence between the output and input, without using the model structure or weights”. AIME avoids “the bias of dependence on the model structure in XAI itself”. Although ordinary XAI methods (e.g. LIME, SHAP) are also called “model-agnostic”, there is a possibility of bias occurring because they only look at “the neighborhood of the output” due to the way local sampling is done, etc.
+Because AIME uses the entire sample (all Y and X), it is not biased towards the “inside of the black box model”, and can handle the “ideal Y” across the entire range.
+This approach minimizes the risk that “XAI itself depends on the model structure”, and it is possible to create explanations in a completely data-driven manner in the form of “$Explanation = AIME(X,Y)$”.
 ## PCAIME (New)
 - PCAIME, or Principal Component Analysis-Enhanced Approximate Inverse Model Explanations (https://ieeexplore.ieee.org/document/10648696), is an advanced method that extends the Approximate Inverse Model Explanations (AIME) framework.
 - It incorporates dimensional decomposition and expansion functionalities, such as Principal Component Analysis (PCA), to enhance the explainability of complex AI and machine learning models.
