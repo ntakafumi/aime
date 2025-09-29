@@ -1,3 +1,21 @@
+Metadata-Version: 2.4
+Name: aime-xai
+Version: 1.1.0
+Summary: Approximate Inverse Model Explanations (AIME): unified global/local importance for XAI
+License: LicenseRef-AIME-Academic-NonCommercial
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary
+
 # **AIME:**Approximate Inverse Model Explanations
 The AIME methodology is detailed in the paper available at The AIME methodology is detailed in the paper available at [https://ieeexplore.ieee.org/document/10247033](https://ieeexplore.ieee.org/document/10247033). AIME is proposed to address the challenges faced by existing methods in providing intuitive explanations for black-box models. AIME offers unified global and local feature importance by deriving approximate inverse operators for black-box models. It introduces a representative instance similarity distribution plot, aiding comprehension of the predictive behavior of the model and target dataset.
 ## Features
@@ -61,11 +79,11 @@ journal={IEEE Access},
 ```
 
 ```
-@article{nakanishi2025bayesianaime,
+@article{nakanishi2026bayesianaime,
   author  = {Takafumi Nakanishi},
   title   = {Bayesian-AIME: Quantifying Uncertainty and Enhancing Stability in Approximate Inverse Model Explanations},
   journal = {IEEE Access},
-  year    = {2025},
+  year    = {2026},
   note    = {Accepted for publication}
 }
 ```
