@@ -22,6 +22,9 @@ Please refer to PCAIME.ipynb when implementing.
 # **HuberAIME** : 
 AIME is based on the least squares method, so it has the disadvantage of being weak against outliers. If you want to include data with outliers, please use it as “AIME (use_huber=True)”.
 
+# **BayesianAIME** :
+Bayesian-AIME is a Bayesian extension of AIME that treats the model’s inverse operator as a random variable, yielding a closed-form posterior over feature-importance rather than a single point estimate. It attaches 95% credible intervals to both global and local attributions, enabling quantitative confidence in explanations while preserving AIME’s point estimate under an empirical-prior baseline. Experiments show improved stability versus LIME/SHAP and calibrated uncertainty on synthetic and real datasets. Please use it as "AIME(use_Bayesian=True)"
+
 ## Citation
 If you use this software for research or other purposes, please cite the following paper.
 ```
