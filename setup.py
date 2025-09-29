@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='aime_xai',
-    version='0.1',
+    version='1.1.0',
     license="Apply the The 2-Clause BSD License only for academic or research purposes, and apply Commercial License for commercial and other purposes.",
     packages=find_packages(),    
     author="Takafumi Nakanishi",
