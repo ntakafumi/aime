@@ -77,11 +77,14 @@ journal={IEEE Access},
 ```
 
 ```
-@article{nakanishi2025bayesianaime,
-  author  = {Takafumi Nakanishi},
-  title   = {Bayesian-AIME: Quantifying Uncertainty and Enhancing Stability in Approximate Inverse Model Explanations},
-  journal = {IEEE Access},
-  year    = {2025},
-  note    = {Accepted for publication}
-}
+@ARTICLE{11193832,
+  author={Nakanishi, Takafumi},
+  journal={IEEE Access}, 
+  title={Bayesian-AIME: Quantifying Uncertainty and Enhancing Stability in Approximate Inverse Model Explanations}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-1},
+  keywords={Bayes methods;Uncertainty;Stability analysis;Explainable AI;Reliability;Perturbation methods;Predictive models;Costs;Computational efficiency;Stability criteria;approximate inverse model explanation (AIME);Bayesian inference;explainable artificial intelligence (XAI);feature importance;stability/reliability;uncertainty XAI},
+  doi={10.1109/ACCESS.2025.3617984}}
 ```
