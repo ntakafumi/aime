@@ -82,9 +82,9 @@ journal={IEEE Access},
   journal={IEEE Access}, 
   title={Bayesian-AIME: Quantifying Uncertainty and Enhancing Stability in Approximate Inverse Model Explanations}, 
   year={2025},
-  volume={},
+  volume={13},
   number={},
-  pages={1-1},
-  keywords={Bayes methods;Uncertainty;Stability analysis;Explainable AI;Reliability;Perturbation methods;Predictive models;Costs;Computational efficiency;Stability criteria;approximate inverse model explanation (AIME);Bayesian inference;explainable artificial intelligence (XAI);feature importance;stability/reliability;uncertainty XAI},
+  pages={175547-175564},
+  keywords={Bayes methods;Uncertainty;Stability analysis;Explainable AI;Reliability;Perturbation methods;Predictive models;Costs;Computational efficiency;Stability criteria;Approximate inverse model explanation (AIME);Bayesian inference;explainable artificial intelligence (XAI);feature importance;stability/reliability;uncertainty XAI},
   doi={10.1109/ACCESS.2025.3617984}}
 ```
