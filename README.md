@@ -35,7 +35,7 @@ This method preserves AIME’s efficiency on clean data while significantly impr
 # **BayesianAIME** :
 Bayesian-AIME is a Bayesian extension of AIME that treats the model’s inverse operator as a random variable, yielding a closed-form posterior over feature-importance rather than a single point estimate. It attaches 95% credible intervals to both global and local attributions, enabling quantitative confidence in explanations while preserving AIME’s point estimate under an empirical-prior baseline. Experiments show improved stability versus LIME/SHAP and calibrated uncertainty on synthetic and real datasets. Please use it as "AIME(use_Bayesian=True)"
 
-[https://ieeexplore.ieee.org/document/11193832]{https://ieeexplore.ieee.org/document/11193832}
+[https://ieeexplore.ieee.org/document/11193832](https://ieeexplore.ieee.org/document/11193832)
 
 ## Citation
 If you use this software for research or other purposes, please cite the following paper.
