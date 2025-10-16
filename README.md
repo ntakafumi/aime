@@ -1,5 +1,5 @@
 # **AIME**:Approximate Inverse Model Explanations
-[![PyPI version](https://img.shields.io/pypi/v/aime-xai)](https://pypi.org/project/aime-xai/)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17225492.svg)](https://doi.org/10.5281/zenodo.17225492)
+[![PyPI version](https://img.shields.io/pypi/v/aime-xai)](https://pypi.org/project/aime-xai/)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17369861.svg)](https://doi.org/10.5281/zenodo.17369861)
 <img src="https://github.com/user-attachments/assets/8bb8a240-37fc-4708-abbe-278bb8e00296" width="30%"/>
 
 The AIME methodology is detailed in the paper available at The AIME methodology is detailed in the paper available at [https://ieeexplore.ieee.org/document/10247033](https://ieeexplore.ieee.org/document/10247033). AIME is proposed to address the challenges faced by existing methods in providing intuitive explanations for black-box models. AIME offers unified global and local feature importance by deriving approximate inverse operators for black-box models. It introduces a representative instance similarity distribution plot, aiding comprehension of the predictive behavior of the model and target dataset.
