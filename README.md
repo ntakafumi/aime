@@ -4,9 +4,9 @@
   <img src="assets/AIME-logo.png" width="400">
 </p>
 
-![AIME Overviwe](assets/AIMEOverview.png)
+![AIME Overview](assets/AIMEOverview.png)
 
-AIME explains a trained black-box model by learning an approximate inverse operator \(A^\dagger\) that maps model outputs back to input features.
+AIME explains a trained black-box model by learning an approximate inverse operator `A†` that maps model outputs back to input features.
 
 Unlike conventional forward-attribution methods such as LIME and SHAP, AIME does more than assign feature contributions. From a single inverse operator, it provides:
 
@@ -19,10 +19,10 @@ Unlike conventional forward-attribution methods such as LIME and SHAP, AIME does
 The AIME methodology is detailed in the
 [original paper](https://ieeexplore.ieee.org/document/10247033).
 
-`aime_xai` is a model-agnostic **explainable-AI**
-library that explains a black-box model by building its **approximate inverse
-operator** `A†`, then reading explanations *backwards* — from the model output
-`y` to the input `x`. 
+This edition keeps the canonical AIME mathematics **unchanged** and adds:
+
+- **One class, five variants** — AIME, HuberAIME, RidgeAIME, Huber-RidgeAIME, BayesianAIME.
+- A **signature, publication-grade visual layer** ...
 
 This edition keeps the canonical AIME mathematics **unchanged** and adds:
 
