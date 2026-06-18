@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aime_xai"
+version = "1.2.0"
+description = "AIME (Approximate Inverse Model Explanations) — inverse-operator XAI with publication-grade visualisations and an inverse-explanation evaluation suite."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [{ name = "Takafumi Nakanishi", email = "takafumi@eigenbeats.com" }]
+keywords = ["XAI", "explainability", "inverse problem", "AIME", "interpretability"]
+
+# Runtime dependencies. matplotlib is imported lazily (only when a plotting
+# method is actually called), so the computation core and the metrics run even
+# if matplotlib is absent; it is listed here so the default install is fully
+# featured.
+dependencies = [
+    "numpy>=1.21",
+    "pandas>=1.3",
+    "scikit-learn>=1.0",
+    "matplotlib>=3.5",
+    "scipy>=1.7",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    # Dual-licensed: 2-Clause BSD for academic/research use; Commercial License
+    # for commercial and other purposes (see LICENSE).
+    "License :: Other/Proprietary License",
+]
+
+[project.urls]
+Homepage = "https://github.com/ntakafumi/aime"
+Repository = "https://github.com/ntakafumi/aime"
+DOI = "https://doi.org/10.5281/zenodo.17369861"
+
+[project.optional-dependencies]
+umap = ["umap-learn"]
+colab = ["google-colab"]
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["aime_xai"]
+
+[tool.setuptools.package-data]
+aime_xai = ["py.typed"]

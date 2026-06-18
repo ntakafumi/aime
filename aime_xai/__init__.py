@@ -1,11 +1,19 @@
-# aime_xai/__init__.py
+# aime_xai/__init__.py  (signature-visualisation edition)
 
-# バージョン等を定義（任意）
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
-# core.py 内の AIME クラスをパッケージのトップレベルに公開
 from .core import AIME
+from . import style
+from . import metrics
+from .metrics import AIMEEvaluator
+from . import operator_viz
+from .operator_viz import OperatorVisualizer
 
 __all__ = [
     "AIME",
+    "style",
+    "metrics",
+    "AIMEEvaluator",
+    "operator_viz",
+    "OperatorVisualizer",
 ]

@@ -1,0 +1,27 @@
+{
+  "dataset": "digits",
+  "n_repeats": 20,
+  "test_size": 0.3,
+  "figures": [
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/figures/fig_01_core_metric_heatmap.png",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/figures/fig_02_model_truth_delta_heatmap.png",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/figures/fig_03_accuracy_vs_core_ies.png",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/figures/fig_04_secondary_diagnostics.png",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/figures/fig_05_dashboard_selected_model.png",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/figures/fig_06_target_mode_core_profiles.png",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/figures/fig_07_core_metric_correlation.png"
+  ],
+  "tables": [
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/tables/tab_aime_core_metrics.tex",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/tables/tab_aime_core_metrics_numeric.tex",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/tables/tab_aime_secondary_metrics.tex",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/tables/tab_model_performance.tex",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/tables/tab_model_truth_metric_gaps.tex"
+  ],
+  "csv": [
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/aime_core_metrics_mean.csv",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/aime_metrics_long.csv",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/model_performance_long.csv",
+    "/content/drive/MyDrive/Colab Notebooks/Research/AIME/package/aime_xai_new/model_truth_metric_gaps_long.csv"
+  ]
+}
