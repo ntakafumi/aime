@@ -22,11 +22,6 @@ The AIME methodology is detailed in the
 This edition keeps the canonical AIME mathematics **unchanged** and adds:
 
 - **One class, five variants** — AIME, HuberAIME, RidgeAIME, Huber-RidgeAIME, BayesianAIME.
-- A **signature, publication-grade visual layer** ...
-
-This edition keeps the canonical AIME mathematics **unchanged** and adds:
-
-- **One class, five variants** — AIME, HuberAIME, RidgeAIME, Huber-RidgeAIME, BayesianAIME.
 - A **signature, publication-grade visual layer** (white background, no chart-junk,
   an `A†` design language) that does not look like default matplotlib.
 - **Inverse-operator-only** visualisations: operator-flow ribbons, representative
