@@ -1,5 +1,5 @@
 # AIME — Approximate Inverse Model Explanations · signature-visualisation edition
-[![PyPI version](https://img.shields.io/pypi/v/aime-xai)](https://pypi.org/project/aime-xai/)[!License: Research Only](https://img.shields.io/badge/License-Research_Only-red.svg)」[![DOI](https://zenodo.org/badge/711216980.svg)](https://doi.org/10.5281/zenodo.17225491)
+[![PyPI version](https://img.shields.io/pypi/v/aime-xai)](https://pypi.org/project/aime-xai/)[!License: Research Only](https://img.shields.io/badge/License-Research_Only-red.svg)][![DOI](https://zenodo.org/badge/711216980.svg)](https://doi.org/10.5281/zenodo.17225491)
 <p align="center">
   <img src="assets/AIME-logo.png" width="400">
 </p>
