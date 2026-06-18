@@ -4,7 +4,7 @@
   <img src="assets/AIME-logo.png" width="400">
 </p>
 
-![AIME Overvire](assets/AIME_overview.png)
+![AIME Overviwe](assets/AIME_overview.png)
 
 `aime_xai` is a model-agnostic **explainable-AI**
 library that explains a black-box model by building its **approximate inverse
