@@ -6,14 +6,23 @@
 
 ![AIME Overviwe](assets/AIMEOverview.png)
 
+AIME explains a trained black-box model by learning an approximate inverse operator \(A^\dagger\) that maps model outputs back to input features.
+
+Unlike conventional forward-attribution methods such as LIME and SHAP, AIME does more than assign feature contributions. From a single inverse operator, it provides:
+
+- global feature importance for each output class
+- local feature importance for each instance
+- representative input patterns for each class
+- inverse-operator visualizations
+- uncertainty-aware explanations with BayesianAIME
+
+The AIME methodology is detailed in the
+[original paper](https://ieeexplore.ieee.org/document/10247033).
+
 `aime_xai` is a model-agnostic **explainable-AI**
 library that explains a black-box model by building its **approximate inverse
 operator** `A†`, then reading explanations *backwards* — from the model output
 `y` to the input `x`. 
-The AIME methodology is detailed in the paper available at The AIME methodology is detailed in the paper available at [https://ieeexplore.ieee.org/document/10247033](https://ieeexplore.ieee.org/document/10247033). 
-From the single operator it derives **global** and
-**local** feature importance, plus diagnostics no forward-problem method
-(LIME/SHAP) can produce.
 
 This edition keeps the canonical AIME mathematics **unchanged** and adds:
 
