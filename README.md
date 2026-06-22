@@ -278,11 +278,19 @@ so existing code keeps working; plotting methods only gain optional `save_path` 
 
 ## License
 
-AIME is **dual-licensed** under the 2-Clause BSD License and a Commercial
-License. Apply the 2-Clause BSD License only for academic or research purposes,
-and the Commercial License for commercial and other purposes — you choose which
-to use. For commercial licensing (a fee may apply), contact
-**takafumi@eigenbeats.com**.
+AIME is available under a dual-licensing model:
+
+- **Noncommercial use:** permitted under the
+  [PolyForm Noncommercial License 1.0.0](LICENSE).
+- **Commercial use:** requires a separate written commercial license from
+  the copyright holder.
+
+The PolyForm Noncommercial License is a source-available license and is not
+an OSI-approved open-source license.
+
+For commercial licensing, contact
+[takafumi@eigenbeats.com](mailto:takafumi@eigenbeats.com), or see
+[Commercial licensing](COMMERCIAL-LICENSING.md).
 
 ---
 
