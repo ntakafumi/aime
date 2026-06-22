@@ -46,6 +46,8 @@ with every visualisation**. The operator math is identical to the papers.
 
 `use_bayesian` cannot be combined with Huber/Ridge.
 
+---
+
 ## Try AIME in Colab
 
 Run these notebooks directly in your browser—no local setup is required.
