@@ -58,8 +58,6 @@ Run these notebooks directly in your browser—no local setup is required.
 
 ---
 
----
-
 ## Installation
 
 ```bash
