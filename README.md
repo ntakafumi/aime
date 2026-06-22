@@ -19,6 +19,8 @@ Unlike conventional forward-attribution methods such as LIME and SHAP, AIME does
 The AIME methodology is detailed in the
 [original paper](https://ieeexplore.ieee.org/document/10247033).
 
+For the conceptual motivation, the inverse-operator viewpoint, and a careful comparison with LIME and SHAP, see **[Why AIME?](docs/why_aime.md)**.
+
 This edition keeps the canonical AIME mathematics **unchanged** and adds:
 
 - **One class, five variants** — AIME, HuberAIME, RidgeAIME, Huber-RidgeAIME, BayesianAIME.
