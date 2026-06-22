@@ -29,9 +29,8 @@ classifiers = [
     "Operating System :: OS Independent",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    # Dual-licensed: 2-Clause BSD for academic/research use; Commercial License
-    # for commercial and other purposes (see LICENSE).
-    "License :: Other/Proprietary License",
+    # PolyForm Noncommercial License 1.0.0 for noncommercial use.
+    # A separate written commercial license is required for commercial use.    "License :: Other/Proprietary License",
 ]
 
 [project.urls]
