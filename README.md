@@ -46,6 +46,18 @@ with every visualisation**. The operator math is identical to the papers.
 
 `use_bayesian` cannot be combined with Huber/Ridge.
 
+## Try AIME in Colab
+
+Run these notebooks directly in your browser—no local setup is required.
+
+| Notebook | Purpose | Run |
+|---|---|---|
+| [Titanic quick start](examples/colab/01_titanic_quickstart.ipynb) | Train a black-box model and obtain global, local, representative, and inverse-operator explanations in about five minutes. | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ntakafumi/aime/blob/main/examples/colab/01_titanic_quickstart.ipynb) |
+| [AIME vs SHAP/LIME](examples/colab/02_aime_vs_shap_lime.ipynb) | Compare the explanation objects and see what is distinctive about an inverse-operator explanation. | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ntakafumi/aime/blob/main/examples/colab/02_aime_vs_shap_lime.ipynb) |
+| [BayesianAIME uncertainty](examples/colab/03_bayesian_aime_uncertainty.ipynb) | Visualize global and local explanation uncertainty with 95% interval bounds. | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ntakafumi/aime/blob/main/examples/colab/03_bayesian_aime_uncertainty.ipynb) |
+
+---
+
 ---
 
 ## Installation
