@@ -196,7 +196,7 @@ $$
 A^\dagger.
 $$
 
-Because \(A^\dagger\) is a linear operator, one may think:
+Because $A^\dagger$ is a linear operator, one may think:
 
 > "If the explanation operator is linear, then the original prediction model must also be linear."
 
@@ -216,10 +216,10 @@ The correct distinction is:
 
 | Object | Direction | May be nonlinear? | Role |
 |---|---:|---:|---|
-| Prediction model \(f\) | input \(\rightarrow\) output | Yes | Produces predictions |
-| AIME explanation operator \(A^\dagger\) | output \(\rightarrow\) input-side explanation | Linear by design | Explains outputs in input coordinates |
+| Prediction model $f$ | input $\rightarrow$ output | Yes | Produces predictions |
+| AIME explanation operator $A^\dagger$ | output $\rightarrow$ input-side explanation | Linear by design | Explains outputs in input coordinates |
 
-Thus, the linearity of \(A^\dagger\) is not a restriction on the model \(f\).
+Thus, the linearity of $A^\dagger$ is not a restriction on the model $f$.
 
 It is a design choice for the explanation model.
 
@@ -235,8 +235,8 @@ $$
 
 where
 
-- \(d\) is the number of input features,
-- \(c\) is the number of output components, such as classes, scores, logits, or probabilities.
+- $d$ is the number of input features,
+- $c$ is the number of output components, such as classes, scores, logits, or probabilities.
 
 The prediction model may be any trained model:
 
@@ -258,7 +258,7 @@ $$
 \hat y = f(x).
 $$
 
-The model \(f\) can be highly nonlinear.  
+The model $f$ can be highly nonlinear.  
 It may have decision trees, kernels, neural activations, attention blocks, or any other nonlinear mechanism.
 
 AIME starts **after** this nonlinear prediction step.
@@ -293,7 +293,7 @@ $$
 x_i\in\mathbb{R}^{d}
 $$
 
-be the \(i\)-th input sample, and let
+be the $i$-th input sample, and let
 
 $$
 \hat y_i=f(x_i)\in\mathbb{R}^{c}
@@ -329,7 +329,7 @@ In words:
 
 This orientation is essential.
 
-AIME does **not** seek a matrix \(B\) such that
+AIME does **not** seek a matrix $B$ such that
 
 $$
 \hat Y\approx BX.
@@ -412,7 +412,7 @@ $$
 \sum_{k=1}^{c}\hat y_k=1.
 $$
 
-Thus, the output lies on a probability simplex of effective dimension \(c-1\).
+Thus, the output lies on a probability simplex of effective dimension $c-1$.
 
 This makes the inverse even more underdetermined.
 
@@ -580,7 +580,7 @@ AIME searches within the finite-dimensional class
 
 $\mathcal{H}_Y=\{AY: A\in\mathbb{R}^{d\times c}\}.$
 
-This is the space of all linear reconstructions of \(X\) from \(Y\).
+This is the space of all linear reconstructions of $X$ from $Y$.
 
 The population AIME operator is
 
@@ -956,7 +956,7 @@ This produces a different type of explanation object.
 
 | Property | SHAP | LIME | AIME |
 |---|---|---|---|
-| Main direction | Input \(\rightarrow\) Output | Input \(\rightarrow\) Output | Output \(\rightarrow\) Input |
+| Main direction | Input $\rightarrow$ Output | Input $\rightarrow$ Output | Output $\rightarrow$ Input |
 | Explanation object | Additive feature attribution | Local surrogate model | Inverse explanation operator |
 | Scope | Often local, can be summarized globally | Local | Global operator with local decompositions |
 | Uses a simple explanation model? | Yes | Yes | Yes |
@@ -1193,7 +1193,7 @@ AIME is powerful, but it should be interpreted carefully.
 
 AIME computes an approximate inverse explanation operator.
 
-It should not be described as recovering the true inverse function \(f^{-1}\).
+It should not be described as recovering the true inverse function $f^{-1}$.
 
 In most machine-learning settings, that inverse does not exist.
 
@@ -1343,10 +1343,10 @@ The following text can be used in a README, slide, or short introduction.
 > It can explain nonlinear black-box models such as Random Forests, XGBoost, neural networks, CNNs, and Transformers.
 >
 > AIME does not approximate the forward prediction model by a linear model.  
-> Instead, after the trained model produces outputs, AIME learns a linear approximate inverse explanation operator \(A^\dagger\) that maps those outputs back to input-side patterns.
+> Instead, after the trained model produces outputs, AIME learns a linear approximate inverse explanation operator $A^\dagger$ that maps those outputs back to input-side patterns.
 >
 > The linearity belongs to the explanation operator, not to the prediction model.  
-> Since the model outputs \(f(x)\) may themselves be nonlinear functions of the input, the composition \(A^\dagger f(x)\) can still reflect nonlinear model behavior.
+> Since the model outputs $f(x)$ may themselves be nonlinear functions of the input, the composition $A^\dagger f(x)$ can still reflect nonlinear model behavior.
 >
 > From this single inverse operator, AIME derives global feature importance, local explanations, representative input patterns, operator visualizations, and uncertainty-aware explanations in BayesianAIME.
 
@@ -1384,7 +1384,7 @@ Expanding,
 
 $J(A)= tr(XX^T)-2 tr(A\hat YX^T)+ tr(A\hat Y\hat Y^T A^T).$
 
-Taking the derivative with respect to \(A\),
+Taking the derivative with respect to $A$,
 
 $\frac{\partial J}{\partial A}=-2X\hat Y^T+2A\hat Y\hat Y^T.$
 
