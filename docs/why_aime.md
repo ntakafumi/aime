@@ -436,52 +436,27 @@ The simplest and most interpretable class is the class of linear operators from 
 
 AIME solves
 
-$$
-\boxed{
-A^\dagger
-=
-\arg\min_A
-\|X-A\hat Y\|_F^2.
-}
-$$
+$\boxed{A^\dagger=\arg\min_A\|X-A\hat Y\|_F^2.}$
 
 Here
 
-$$
-\|M\|_F^2
-=
-\sum_{i,j}M_{ij}^2
-$$
+$\|M\|_F^2=\sum_{i,j}M_{ij}^2$
 
 is the squared Frobenius norm.
 
 Equivalently,
 
-$$
-A^\dagger
-=
-\arg\min_A
-\sum_{i=1}^{n}
-\|x_i-A\hat y_i\|_2^2.
-$$
+$A^\dagger=\arg\min_A\sum_{i=1}^{n}\|x_i-A\hat y_i\|_2^2.$
 
-Thus, \(A^\dagger\) is the operator that best reconstructs the input samples from the prediction outputs in the least-squares sense.
+Thus, $A^\dagger# is the operator that best reconstructs the input samples from the prediction outputs in the least-squares sense.
 
-If \(\hat Y\hat Y^T\) is invertible, the normal equations give
+If $\hat Y\hat Y^T$ is invertible, the normal equations give
 
-$$
-A^\dagger
-=
-X\hat Y^T(\hat Y\hat Y^T)^{-1}.
-$$
+$A^\dagger=X\hat Y^T(\hat Y\hat Y^T)^{-1}.$
 
 In general, using the Moore–Penrose pseudoinverse,
 
-$$
-\boxed{
-A^\dagger=X\hat Y^{+}.
-}
-$$
+$\boxed{A^\dagger=X\hat Y^{+}.}$
 
 This is the mathematical core of AIME.
 
@@ -493,33 +468,25 @@ This is the most important section.
 
 AIME does **not** approximate
 
-$$
-f(x)
-$$
+$f(x)$
 
 by a linear function.
 
 AIME does **not** solve
 
-$$
-f(x)\approx Bx.
-$$
+$f(x)\approx Bx.$
 
 AIME solves
 
-$$
-X\approx A^\dagger \hat Y.
-$$
+$X\approx A^\dagger \hat Y.$
 
 That is,
 
-$$
-x_i\approx A^\dagger f(x_i).
-$$
+$x_i\approx A^\dagger f(x_i).$
 
 Therefore, the approximation is applied in the output-to-input direction.
 
-The model \(f\) remains exactly the model the user trained.
+The model $f$ remains exactly the model the user trained.
 
 ```mermaid
 flowchart TB
@@ -538,7 +505,7 @@ flowchart TB
 
 The wrong interpretation says:
 
-> AIME assumes \(f\) is linear.
+> AIME assumes $f$ is linear.
 
 The correct interpretation says:
 
@@ -552,35 +519,23 @@ These are not the same.
 
 There is an even deeper reason why AIME can explain nonlinear models.
 
-The operator \(A^\dagger\) is linear in the output variable \(\hat y\), not necessarily linear in the original input \(x\).
+The operator $A^\dagger$ is linear in the output variable $\hat y$, not necessarily linear in the original input $x$.
 
-For an input \(x\), the AIME reconstruction is
+For an input $(x$, the AIME reconstruction is
 
-$$
-\hat x_{\mathrm{AIME}}
-=
-A^\dagger \hat y
-=
-A^\dagger f(x).
-$$
+$\hat x_{\mathrm{AIME}}=A^\dagger \hat y=A^\dagger f(x).$
 
-If \(f\) is nonlinear, then the composition
+If $f$ is nonlinear, then the composition
 
-$$
-A^\dagger\circ f
-$$
+$A^\dagger\circ f$
 
-is generally nonlinear as a function of \(x\).
+is generally nonlinear as a function of $x$.
 
 That is,
 
-$$
-x
-\mapsto
-A^\dagger f(x)
-$$
+$x\mapsto A^\dagger f(x)$
 
-can be nonlinear even though \(A^\dagger\) is linear in \(\hat y\).
+can be nonlinear even though $A^\dagger$ is linear in $\hat y$.
 
 This point is crucial.
 
@@ -590,10 +545,10 @@ But those output coordinates are themselves nonlinear functions of the input whe
 
 This is similar to the common idea of using a linear readout on nonlinear features.
 
-For example, a neural network may learn nonlinear features \(h(x)\), and the final classifier may be linear in \(h(x)\).  
+For example, a neural network may learn nonlinear features $h(x)$, and the final classifier may be linear in $h(x)$.  
 The final linear layer does not imply that the whole neural network is linear.
 
-Likewise, AIME may be linear in \(\hat y=f(x)\), while \(f(x)\) may encode nonlinear information about \(x\).
+Likewise, AIME may be linear in $\hat y=f(x)$, while $f(x)$ may encode nonlinear information about $x$.
 
 So the correct statement is:
 
@@ -607,75 +562,41 @@ This is why AIME can be applied to nonlinear prediction models.
 
 AIME can also be understood as an operator approximation problem.
 
-Let \(X\) and \(Y\) be random vectors:
+Let $X$ and $Y$ be random vectors:
 
-$$
-X:\Omega\rightarrow\mathbb{R}^{d},
-$$
+$X:\Omega\rightarrow\mathbb{R}^{d},$
 
-$$
-Y=f(X):\Omega\rightarrow\mathbb{R}^{c}.
-$$
+$Y=f(X):\Omega\rightarrow\mathbb{R}^{c}.$
 
 Assume they have finite second moments:
 
-$$
-\mathbb{E}\|X\|^2<\infty,
-\qquad
-\mathbb{E}\|Y\|^2<\infty.
-$$
+$\mathbb{E}\|X\|^2<\infty,\qquad\mathbb{E}\|Y\|^2<\infty.$
 
-Consider the Hilbert space \(L^2\) of square-integrable random vectors with inner product
+Consider the Hilbert space $L^2$ of square-integrable random vectors with inner product
 
-$$
-\langle U,V\rangle
-=
-\mathbb{E}[U^T V].
-$$
+$\langle U,V\rangle=\mathbb{E}[U^T V].$
 
 AIME searches within the finite-dimensional class
 
-$$
-\mathcal{H}_Y
-=
-\{AY: A\in\mathbb{R}^{d\times c}\}.
-$$
+$\mathcal{H}_Y=\{AY: A\in\mathbb{R}^{d\times c}\}.$
 
 This is the space of all linear reconstructions of \(X\) from \(Y\).
 
 The population AIME operator is
 
-$$
-A_*=
-\arg\min_A
-\mathbb{E}
-\left[
-\|X-AY\|^2
-\right].
-$$
+$A_*=\arg\min_A\mathbb{E}\left[\|X-AY\|^2\right].$
 
 The normal equation is
 
-$$
-\mathbb{E}[(X-A_*Y)Y^T]=0.
-$$
+$\mathbb{E}[(X-A_*Y)Y^T]=0.$
 
 Equivalently,
 
-$$
-\mathbb{E}[XY^T]
-=
-A_*\mathbb{E}[YY^T].
-$$
+$\mathbb{E}[XY^T]=A_*\mathbb{E}[YY^T].$
 
-If \(\mathbb{E}[YY^T]\) is invertible,
+If $\mathbb{E}[YY^T]$ is invertible,
 
-$$
-A_*
-=
-\mathbb{E}[XY^T]
-\left(\mathbb{E}[YY^T]\right)^{-1}.
-$$
+$A_*=\mathbb{E}[XY^T]\left(\mathbb{E}[YY^T]\right)^{-1}.$
 
 If not, one uses the pseudoinverse.
 
@@ -687,25 +608,21 @@ The sample version replaces expectations with empirical averages and gives the m
 
 The residual
 
-$$
-R=X-A_*Y
-$$
+$R=X-A_*Y$
 
-is orthogonal to every linear reconstruction from \(Y\):
+is orthogonal to every linear reconstruction from $Y$:
 
-$$
-\mathbb{E}[R Y^T]=0.
-$$
+$\mathbb{E}[R Y^T]=0.$
 
-Thus \(A_*Y\) is the orthogonal projection of \(X\) onto the subspace of linear functions of \(Y\).
+Thus $A_*Y$ is the orthogonal projection of $X$ onto the subspace of linear functions of $Y$.
 
 This gives a precise meaning to the phrase:
 
 > AIME is the best linear inverse explanation of the input in the output-coordinate space.
 
-Again, no linearity of \(f\) is required.
+Again, no linearity of $f$ is required.
 
-The random vector \(Y=f(X)\) may be generated by any nonlinear function.
+The random vector $Y=f(X)$ may be generated by any nonlinear function.
 
 ---
 
@@ -717,11 +634,7 @@ AIME does not claim that the true inverse is linear.
 
 Instead, it defines a specific explanation object:
 
-$$
-A^\dagger
-=
-\text{the best linear inverse reconstruction operator from model outputs to inputs}.
-$$
+$A^\dagger=\text{the best linear inverse reconstruction operator from model outputs to inputs}.$
 
 This is analogous to several standard mathematical practices.
 
@@ -749,39 +662,25 @@ In representation learning, it is common to learn a nonlinear encoder and a line
 
 For example:
 
-$$
-x
-\rightarrow
-h(x)
-\rightarrow
-\hat x.
-$$
+$x\rightarrow h(x) \rightarrow \hat x.$
 
-Even if the decoder is linear in \(h(x)\), the entire map from \(x\) to \(\hat x\) can be nonlinear because \(h(x)\) is nonlinear.
+Even if the decoder is linear in $h(x)$, the entire map from $x$ to $\hat x$ can be nonlinear because $h(x)$ is nonlinear.
 
 AIME has the same structure:
 
-$$
-x
-\rightarrow
-f(x)
-\rightarrow
-A^\dagger f(x).
-$$
+$x\rightarrow f(x)\rightarrow A^\dagger f(x).$
 
-The prediction model \(f\) acts as a nonlinear encoder into output coordinates.
+The prediction model $f$ acts as a nonlinear encoder into output coordinates.
 
 AIME acts as a linear decoder from those coordinates back to input-side explanation patterns.
 
 ## 9.3 Statistical projection analogy
 
-In regression theory, the best linear predictor of \(X\) from \(Y\) is useful even when the relationship between \(X\) and \(Y\) is nonlinear.
+In regression theory, the best linear predictor of $X$ from $Y$ is useful even when the relationship between $X$ and $Y$ is nonlinear.
 
 The best linear predictor is not the true conditional expectation
 
-$$
-\mathbb{E}[X\mid Y],
-$$
+$\mathbb{E}[X\mid Y],$
 
 unless the relationship has special structure.
 
@@ -789,13 +688,11 @@ But it is still the optimal element in a clearly defined linear class.
 
 Similarly, AIME does not claim that
 
-$$
-A^\dagger Y = \mathbb{E}[X\mid Y]
-$$
+$A^\dagger Y = \mathbb{E}[X\mid Y]$
 
 in general.
 
-It claims that \(A^\dagger Y\) is the best linear reconstruction of \(X\) from \(Y\) under the chosen loss.
+It claims that $A^\dagger Y$ is the best linear reconstruction of $X$ from $Y$ under the chosen loss.
 
 This is a mathematically precise explanation object.
 
@@ -805,39 +702,31 @@ This is a mathematically precise explanation object.
 
 Consider a one-dimensional nonlinear prediction model:
 
-$$
-f(x)=x^2.
-$$
+$f(x)=x^2.$
 
 This function is nonlinear and not one-to-one because
 
-$$
-f(1)=f(-1)=1.
-$$
+$f(1)=f(-1)=1.$
 
-A true inverse cannot distinguish \(1\) from \(-1\) using only \(y=x^2\).
+A true inverse cannot distinguish $1$ from $-1$ using only $y=x^2$.
 
-Now suppose we observe samples \(x_i\) and outputs
+Now suppose we observe samples $x_i$ and outputs
 
-$$
-y_i=f(x_i)=x_i^2.
-$$
+$y_i=f(x_i)=x_i^2.$
 
-AIME seeks a scalar \(a\) minimizing
+AIME seeks a scalar $a$ minimizing
 
-$$
-\sum_i (x_i-a y_i)^2.
-$$
+$\sum_i (x_i-a y_i)^2.$
 
-This gives the best linear reconstruction of \(x\) from the nonlinear output \(y=x^2\).
+This gives the best linear reconstruction of $x$ from the nonlinear output $y=x^2$.
 
-If the dataset is symmetric around zero, this optimal \(a\) may be close to zero because \(y\) contains magnitude information but not sign information.
+If the dataset is symmetric around zero, this optimal $a$ may be close to zero because $y$ contains magnitude information but not sign information.
 
 This is not a failure of AIME.
 
 It is a diagnostic fact:
 
-> The model output \(y=x^2\) does not contain enough information to recover the sign of \(x\).
+> The model output $y=x^2$ does not contain enough information to recover the sign of $x$.
 
 Thus the residual is meaningful.
 
@@ -845,15 +734,13 @@ It tells us that the prediction output has discarded information needed to recon
 
 Now consider a less degenerate nonlinear model:
 
-$$
-f(x)=\sigma(3x),
-$$
+$f(x)=\sigma(3x),$
 
-where \(\sigma\) is a sigmoid.
+where $\sigma$ is a sigmoid.
 
-The model is nonlinear, but its output is monotone in \(x\).
+The model is nonlinear, but its output is monotone in $x$.
 
-A linear reconstruction from \(y=f(x)\) back to \(x\) can be a useful best linear inverse explanation over the observed range.
+A linear reconstruction from $y=f(x)$ back to $x$ can be a useful best linear inverse explanation over the observed range.
 
 Again, AIME is not saying that the sigmoid is linear.
 
@@ -865,45 +752,31 @@ It is saying that within the observed output range, a linear inverse operator pr
 
 The matrix
 
-$$
-A^\dagger\in\mathbb{R}^{d\times c}
-$$
+$A^\dagger\in\mathbb{R}^{d\times c}$
 
 has a simple interpretation.
 
 Each column corresponds to one output component.
 
-If \(e_k\) is the \(k\)-th standard basis vector in output space, then
+If $e_k$ is the $k$-th standard basis vector in output space, then
 
-$$
-A^\dagger e_k
-$$
+$A^\dagger e_k$
 
-is the input-side pattern associated with output component \(k\).
+is the input-side pattern associated with output component $k$.
 
 For a classification model with probability outputs,
 
-$$
-\hat y
-=
-\begin{bmatrix}
+$\hat y=\begin{bmatrix}
 \hat y_1\\
 \vdots\\
 \hat y_c
 \end{bmatrix},
 \qquad
-\sum_k \hat y_k=1,
-$$
+\sum_k \hat y_k=1,$
 
 the reconstruction is
 
-$$
-A^\dagger \hat y
-=
-\sum_{k=1}^{c}
-\hat y_k
-A^\dagger e_k.
-$$
+$A^\dagger \hat y=\sum_{k=1}^{c}\hat y_kA^\dagger e_k.$
 
 Thus AIME expresses an input-side explanation as a weighted combination of class-wise input patterns.
 
@@ -917,15 +790,11 @@ It gives a decomposable explanation:
 
 For example, in a digit classifier,
 
-$$
-A^\dagger e_0
-$$
+$A^\dagger e_0$
 
 may represent the input-side pattern associated with digit 0,
 
-$$
-A^\dagger e_1
-$$
+$A^\dagger e_1$
 
 the pattern associated with digit 1,
 
@@ -947,78 +816,45 @@ It is a common source for global, local, and representative explanations.
 
 The entry
 
-$$
-A^\dagger_{jk}
-$$
+$A^\dagger_{jk}$
 
-connects input feature \(j\) to output component \(k\) in the inverse explanation.
+connects input feature $j$ to output component $k$ in the inverse explanation.
 
 Its sign and magnitude can be interpreted as a signed class-wise inverse association, depending on preprocessing and scaling.
 
 A simple class-wise global importance measure is
 
-$$
-G_{jk}=|A^\dagger_{jk}|.
-$$
+$G_{jk}=|A^\dagger_{jk}|.$
 
 One may also aggregate over output components:
 
-$$
-G_j
-=
-\sum_{k=1}^{c}
-|A^\dagger_{jk}|.
-$$
+$G_j=\sum_{k=1}^{c}|A^\dagger_{jk}|.$
 
 This gives a global input-feature importance derived directly from the inverse explanation operator.
 
 ## 12.2 Local feature importance
 
-For a particular instance \(i\), the output is \(\hat y_i\).
+For a particular instance $i$, the output is $\hat y_i$.
 
 The AIME reconstruction is
 
-$$
-\hat x_i
-=
-A^\dagger \hat y_i.
-$$
+$\hat x_i=A^\dagger \hat y_i.$
 
 Expanding componentwise:
 
-$$
-\hat x_{j i}
-=
-\sum_{k=1}^{c}
-A^\dagger_{jk}\hat y_{k i}.
-$$
+$\hat x_{j i}=\sum_{k=1}^{c}A^\dagger_{jk}\hat y_{k i}.$
 
-Thus the contribution of output component \(k\) to input feature \(j\) for instance \(i\) is
+Thus the contribution of output component $k$ to input feature $j$ for instance $i$ is
 
-$$
-C^{(i)}_{jk}
-=
-A^\dagger_{jk}\hat y_{k i}.
-$$
+$C^{(i)}_{jk}=A^\dagger_{jk}\hat y_{k i}.$
 
 This gives a local decomposition:
 
-$$
-\hat x_i
-=
-\sum_{k=1}^{c}
-\hat y_{k i}
-A^\dagger e_k.
-$$
+$\hat x_i=\sum_{k=1}^{c}\hat y_{k i}A^\dagger e_k.$
 
 In matrix form, one may view the local contribution matrix as
 
-$$
-C^{(i)}
-=
-A^\dagger
-\operatorname{diag}(\hat y_i).
-$$
+$C^{(i)}= A^\dagger diag(\hat y_i).$
 
 The local explanation is therefore not an unrelated calculation.
 
@@ -1026,38 +862,29 @@ It is a direct instance-specific activation of the global inverse operator.
 
 ## 12.3 Representative input patterns
 
-The representative pattern for output component \(k\) is
+The representative pattern for output component $k$ is
 
-$$
-r_k
-=
-A^\dagger e_k.
-$$
+$r_k=A^\dagger e_k.$
 
-This is simply the \(k\)-th column of the inverse operator.
+This is simply the $k$-th column of the inverse operator.
 
 It answers:
 
-> What input-side pattern is associated with a pure activation of output component \(k\)?
+> What input-side pattern is associated with a pure activation of output component $k$?
 
 For probability outputs, a prediction vector is a mixture of such representative patterns:
 
-$$
-A^\dagger\hat y_i
-=
-\sum_k
-\hat y_{k i}r_k.
-$$
+$A^\dagger\hat y_i=\sum_k\hat y_{k i}r_k.$
 
 This gives an intuitive explanation of multiclass models.
 
 ## 12.4 Operator visualization
 
-Because \(A^\dagger\) is a matrix, it can be visualized directly.
+Because $A^\dagger$ is a matrix, it can be visualized directly.
 
 Possible visualizations include:
 
-- heatmaps of \(A^\dagger\),
+- heatmaps of $A^\dagger$,
 - signed class-wise feature weights,
 - flow diagrams from output components to input features,
 - representative images for image classifiers,
@@ -1089,21 +916,13 @@ SHAP explains predictions using additive feature attributions.
 
 A simplified form is
 
-$$
-g(z')
-=
-\phi_0+\sum_{j=1}^{d}\phi_j z'_j,
-$$
+$g(z')=\phi_0+\sum_{j=1}^{d}\phi_j z'_j,$
 
-where the \(\phi_j\) values represent feature contributions.
+where the $\phi_j$ values represent feature contributions.
 
 The central direction is still input-to-output:
 
-$$
-x
-\rightarrow
-f(x).
-$$
+$x\rightarrow f(x).$
 
 SHAP assigns contribution values to features for a prediction.
 
@@ -1113,20 +932,13 @@ LIME builds a local interpretable surrogate model around a particular input.
 
 A typical local objective is
 
-$$
-\arg\min_g
-\mathcal{L}(f,g,\pi_x)+\Omega(g),
-$$
+$\arg\min_g\mathcal{L}(f,g,\pi_x)+\Omega(g),$
 
-where \(g\) is an interpretable model and \(\pi_x\) weights samples by locality around \(x\).
+where $g$ is an interpretable model and $\pi_x$ weights samples by locality around $x$.
 
 Again, the direction is forward:
 
-$$
-x
-\rightarrow
-f(x).
-$$
+$x\rightarrow f(x).$
 
 The surrogate model approximates the behavior of the predictor near a given input.
 
@@ -1134,17 +946,11 @@ The surrogate model approximates the behavior of the predictor near a given inpu
 
 AIME instead solves
 
-$$
-X\approx A^\dagger\hat Y.
-$$
+$X\approx A^\dagger\hat Y.$
 
 The direction is inverse:
 
-$$
-\hat y
-\rightarrow
-x.
-$$
+$\hat y\rightarrow x.$
 
 This produces a different type of explanation object.
 
@@ -1188,7 +994,7 @@ They are the semantic output coordinates of a trained model.
 
 For a classifier, these coordinates correspond to class scores or probabilities.
 
-Thus the columns of \(A^\dagger\) are not generic regression coefficients.
+Thus the columns of $A^\dagger$ are not generic regression coefficients.
 
 They are class-wise or output-wise inverse explanation patterns.
 
@@ -1196,15 +1002,12 @@ They are class-wise or output-wise inverse explanation patterns.
 
 Ordinary surrogate modeling often tries to approximate
 
-$$
-\hat Y\approx BX.
-$$
+$\hat Y\approx BX.$
 
 AIME intentionally approximates
 
-$$
-X\approx A^\dagger\hat Y.
-$$
+$X\approx A^\dagger\hat Y.
+$
 
 This inversion changes the interpretation completely.
 
@@ -1232,9 +1035,7 @@ This unification is part of the methodology.
 
 The reconstruction residual
 
-$$
-R=X-A^\dagger\hat Y
-$$
+$R=X-A^\dagger\hat Y$
 
 is also informative.
 
@@ -1256,27 +1057,15 @@ Several variants modify the objective while preserving the inverse-explanation v
 
 ## 15.1 RidgeAIME
 
-When \(\hat Y\hat Y^T\) is ill-conditioned or when outputs are highly correlated, ridge regularization stabilizes the operator.
+When $\hat Y\hat Y^T$ is ill-conditioned or when outputs are highly correlated, ridge regularization stabilizes the operator.
 
 The objective is
 
-$$
-A_\lambda^\dagger
-=
-\arg\min_A
-\|X-A\hat Y\|_F^2
-+
-\lambda\|A\|_F^2.
-$$
+$A_\lambda^\dagger=\arg\min_A\|X-A\hat Y\|_F^2+\lambda\|A\|_F^2.$
 
 The solution is
 
-$$
-A_\lambda^\dagger
-=
-X\hat Y^T
-(\hat Y\hat Y^T+\lambda I)^{-1}.
-$$
+$A_\lambda^\dagger=X\hat Y^T(\hat Y\hat Y^T+\lambda I)^{-1}.$
 
 RidgeAIME trades a small amount of bias for stability.
 
@@ -1288,13 +1077,7 @@ Least squares can be sensitive to outliers.
 
 HuberAIME replaces the squared loss with a robust Huber loss:
 
-$$
-\sum_i
-\rho_\delta
-\left(
-x_i-A\hat y_i
-\right).
-$$
+$\sum_i\rho_\delta\left(x_i-A\hat y_i\right).$
 
 The Huber loss behaves quadratically for small residuals and linearly for large residuals.
 
@@ -1321,15 +1104,13 @@ BayesianAIME treats the inverse operator as uncertain.
 
 A simple statistical model is
 
-$$
-X = A\hat Y + E,
-$$
+$X = A\hat Y + E,$
 
-with a prior on \(A\) and a noise model for \(E\).
+with a prior on $A$ and a noise model for $E$.
 
 Instead of producing only a point estimate, BayesianAIME can produce posterior summaries:
 
-- posterior mean of \(A\),
+- posterior mean of $A$,
 - credible intervals for operator entries,
 - uncertainty-aware global importance,
 - uncertainty-aware local explanations.
@@ -1350,7 +1131,7 @@ The following conditions make AIME explanations more reliable.
 
 ## 16.1 The model output contains meaningful information
 
-If the output vector \(\hat y\) contains enough information about input-side structure, AIME can reconstruct interpretable patterns.
+If the output vector $\hat y$ contains enough information about input-side structure, AIME can reconstruct interpretable patterns.
 
 If the output is too compressed, the residual may be large.
 
@@ -1364,11 +1145,11 @@ For classification, class probabilities or logits often provide meaningful coord
 
 For regression, multiple outputs, transformed outputs, or structured scores may be useful.
 
-The interpretation of \(A^\dagger\) depends on what the output components mean.
+The interpretation of $A^\dagger$ depends on what the output components mean.
 
 ## 16.3 Feature scaling is handled carefully
 
-Because \(A^\dagger\) maps output coordinates to input coordinates, input scaling affects coefficient magnitudes.
+Because $A^\dagger$ maps output coordinates to input coordinates, input scaling affects coefficient magnitudes.
 
 For tabular data, standardization or appropriate preprocessing is important.
 
@@ -1380,9 +1161,7 @@ AIME should not be used blindly.
 
 The reconstruction residual
 
-$$
-\|X-A^\dagger\hat Y\|_F
-$$
+$\|X-A^\dagger\hat Y\|_F$
 
 or normalized versions of it should be examined.
 
@@ -1420,7 +1199,7 @@ In most machine-learning settings, that inverse does not exist.
 
 ## 17.2 AIME is not a causal method by itself
 
-The entries of \(A^\dagger\) describe inverse associations between model outputs and input features.
+The entries of $A^\dagger$ describe inverse associations between model outputs and input features.
 
 They do not automatically imply causal effects.
 
@@ -1458,9 +1237,7 @@ No.
 
 AIME does not assume
 
-$$
-f(x)=Bx.
-$$
+$f(x)=Bx.$
 
 The prediction model may be nonlinear.
 
@@ -1597,67 +1374,31 @@ A more compact version:
 
 We minimize
 
-$$
-J(A)=\|X-A\hat Y\|_F^2.
-$$
+$J(A)=\|X-A\hat Y\|_F^2.$
 
 Using the trace form,
 
-$$
-J(A)
-=
-\operatorname{tr}
-\left[
-(X-A\hat Y)(X-A\hat Y)^T
-\right].
-$$
+$J(A)= tr \left[(X-A\hat Y)(X-A\hat Y)^T\right].$
 
 Expanding,
 
-$$
-J(A)
-=
-\operatorname{tr}(XX^T)
--
-2\operatorname{tr}(A\hat YX^T)
-+
-\operatorname{tr}(A\hat Y\hat Y^T A^T).
-$$
+$J(A)= tr(XX^T)-2 tr(A\hat YX^T)+ tr(A\hat Y\hat Y^T A^T).$
 
 Taking the derivative with respect to \(A\),
 
-$$
-\frac{\partial J}{\partial A}
-=
--2X\hat Y^T
-+
-2A\hat Y\hat Y^T.
-$$
+$\frac{\partial J}{\partial A}=-2X\hat Y^T+2A\hat Y\hat Y^T.$
 
 Setting this to zero gives the normal equation:
 
-$$
-A\hat Y\hat Y^T
-=
-X\hat Y^T.
-$$
+$A\hat Y\hat Y^T=X\hat Y^T.$
 
-If \(\hat Y\hat Y^T\) is invertible,
+If $\hat Y\hat Y^T$ is invertible,
 
-$$
-A
-=
-X\hat Y^T
-(\hat Y\hat Y^T)^{-1}.
-$$
+$A=X\hat Y^T(\hat Y\hat Y^T)^{-1}.$
 
 If it is not invertible, the Moore–Penrose pseudoinverse gives the minimum-norm least-squares solution:
 
-$$
-A^\dagger
-=
-X\hat Y^+.
-$$
+$A^\dagger=X\hat Y^+.$
 
 ---
 
@@ -1667,54 +1408,29 @@ The core formula above is written without an intercept.
 
 If one wants an affine inverse explanation,
 
-$$
-x\approx A\hat y+b,
-$$
+$x\approx A\hat y+b,$
 
 one can augment the output vector:
 
-$$
-\tilde y
-=
-\begin{bmatrix}
-\hat y\\
-1
-\end{bmatrix}.
-$$
+$\tilde y=\begin{bmatrix}\hat y\\1\end{bmatrix}.$
 
 Then the affine problem becomes a linear problem in the augmented coordinates:
 
-$$
-x\approx \tilde A\tilde y.
-$$
+$x\approx \tilde A\tilde y.$
 
-Alternatively, one may center \(X\) and \(\hat Y\), compute the operator on centered variables, and recover the intercept separately.
+Alternatively, one may center $X$ and $\hat Y$, compute the operator on centered variables, and recover the intercept separately.
 
 If
 
-$$
-X_c=X-\bar X,
-\qquad
-Y_c=\hat Y-\bar Y,
-$$
+$X_c=X-\bar X, \qquad Y_c=\hat Y-\bar Y,$
 
 then
 
-$$
-A_c^\dagger
-=
-X_cY_c^T(Y_cY_c^T)^+.
-$$
+$A_c^\dagger=X_cY_c^T(Y_cY_c^T)^+.$
 
 The intercept is
 
-$$
-b
-=
-\bar x
--
-A_c^\dagger \bar y.
-$$
+$b=\bar x-A_c^\dagger \bar y.$
 
 This distinction is important in practical implementations.
 
@@ -1728,21 +1444,11 @@ The central idea remains unchanged:
 
 The sample AIME operator is
 
-$$
-A_n^\dagger
-=
-X\hat Y^T(\hat Y\hat Y^T)^+.
-$$
+$A_n^\dagger=X\hat Y^T(\hat Y\hat Y^T)^+.$
 
 The population operator is
 
-$$
-A_*=
-\mathbb{E}[XY^T]
-\left(
-\mathbb{E}[YY^T]
-\right)^+.
-$$
+$A_*=\mathbb{E}[XY^T]\left(\mathbb{E}[YY^T]\right)^+.$
 
 The sample formula estimates the population object by replacing expectations with empirical averages.
 
@@ -1755,7 +1461,7 @@ This dual interpretation is useful.
 
 For implementation, the finite-sample matrix formula is direct.
 
-For theory, the population projection interpretation clarifies why the method is valid for nonlinear \(f\).
+For theory, the population projection interpretation clarifies why the method is valid for nonlinear $f$.
 
 ---
 
@@ -1765,23 +1471,19 @@ The following two statements look similar but mean completely different things.
 
 ## Statement 1: Forward linearization
 
-$$
-f(x)\approx Bx.
-$$
+$f(x)\approx Bx.$
 
 This tries to replace the prediction model by a linear model.
 
-If \(f\) is highly nonlinear, this may be a poor approximation.
+If $f$ is highly nonlinear, this may be a poor approximation.
 
 ## Statement 2: Inverse explanation
 
-$$
-x\approx A^\dagger f(x).
-$$
+$x\approx A^\dagger f(x).$
 
 This tries to reconstruct input-side patterns from the model outputs.
 
-The model \(f\) remains unchanged.
+The model $f$remains unchanged.
 
 AIME uses Statement 2, not Statement 1.
 
