@@ -21,7 +21,8 @@ The AIME methodology is detailed in the
 
 For the conceptual motivation, the inverse-operator viewpoint, and a careful comparison with LIME and SHAP, see **[Why AIME?](docs/why_aime.md)**.
 
-For a mathematical explanation of why AIME can explain nonlinear black-box models using a linear inverse explanation operator, see **[Why AIME?](docs/why_aime.md)**.
+For readers wondering why AIME can explain nonlinear black-box models using a linear inverse operator, see
+[Why Can a Linear Inverse Operator Explain Nonlinear Models?](docs/why_aime.md#why-can-a-linear-inverse-operator-explain-nonlinear-models).
 
 This edition keeps the canonical AIME mathematics **unchanged** and adds:
 
