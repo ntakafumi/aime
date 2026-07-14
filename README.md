@@ -52,6 +52,19 @@ with every visualisation**. The operator math is identical to the papers.
 `use_bayesian` cannot be combined with Huber/Ridge.
 
 ---
+## AIME²: Theoretical Foundation of AIME
+
+The theoretical foundation of AIME has been established in AIME², published in Communications AI & Computing (Nature Portfolio).
+Unlike conventional explainability methods that primarily produce feature-attribution vectors, AIME represents explanations through an Explainability Operator, which maps model outputs back to explanatory feature structures using an approximate inverse operator.
+AIME² does not replace existing XAI methods or claim a complete unification of explainability. Instead, it introduces a new theoretical perspective for understanding explanations and provides an algebraic framework from which AIME and related explanation mechanisms can be interpreted and analyzed.
+For the complete theoretical formulation, please see:
+AIME²: Toward a Unified Algebraic Theory of Explainability via Approximate Inverse Operators
+Communications AI & Computing (Nature Portfolio), 2026
+DOI: https://doi.org/10.1038/s44488-026-00004-0
+
+📖 Theory repository: https://github.com/ntakafumi/aime2
+
+---
 
 ## Try AIME in Colab
 
