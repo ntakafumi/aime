@@ -309,6 +309,18 @@ If you use this software, please cite the relevant paper(s).
   year={2023}, volume={11}, pages={101020-101044},
   doi={10.1109/ACCESS.2023.3314336}}
 
+@article{Nakanishi2026AIME2,
+  author  = {Nakanishi, Takafumi},
+  title   = {AIME2: toward a unified algebraic theory of explainability via approximate inverse operators},
+  journal = {Communications AI \& Computing},
+  year    = {2026},
+  volume  = {1},
+  number  = {1},
+  pages   = {3},
+  doi     = {10.1038/s44488-026-00004-0},
+  url     = {https://doi.org/10.1038/s44488-026-00004-0}
+}
+
 @ARTICLE{10979913,
   author={Nakanishi, Takafumi},
   journal={IEEE Access},
