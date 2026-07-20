@@ -6,6 +6,11 @@
 
 ![AIME Overview](assets/AIMEOverview.png)
 
+## AIME research portal
+For an overview of AIME, AIME², publications, software, and citation guidance:
+https://ntakafumi.github.io/
+
+## What's AIME
 AIME explains a trained black-box model by learning an approximate inverse operator `A†` that maps model outputs back to input features.
 
 Unlike conventional forward-attribution methods such as LIME and SHAP, AIME does more than assign feature contributions. From a single inverse operator, it provides:
